@@ -22,8 +22,8 @@ def generate_page(src_path: Path, template_path: Path, dest_path: Path, base_pat
         template
         .replace("{{ Title }}", title)
         .replace("{{ Content }}", content)
-        .replace('href=/"', 'href="' + base_path)
-        .replace('src=/"', 'src="' + base_path)
+        .replace('href="/', 'href="' + base_path)
+        .replace('src="/', 'src="' + base_path)
     )
     if not dest_path.parent.exists():
         dest_path.parent.mkdir(parents=True)
